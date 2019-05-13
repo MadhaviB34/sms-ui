@@ -202,8 +202,13 @@ export default{
             this.viewresult=false
             this.gettestdetails=test
             this.testsubjectdetails = test.subjects
+	this.mychild.testCreateId = test.id;
         },
         viewresults:function(){
+            let length = this.viewresultsdetails && this.viewresultsdetails.subjects;
+            for(let i=0;i<length;i++){
+                this.viewresultsdetails.subjects[i].marks ='';
+            }
             var childclassdetails={
                 "id":this.mychild.testCreateId,
                 "gradeid":this.mychild.gradeid,
